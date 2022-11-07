@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import Skeleton from 'react-loading-skeleton';
 const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState([]);
@@ -32,7 +34,7 @@ const Products = () => {
   };
 
   const Loading = () => {
-    return <h1>Loading...</h1>;
+    return <Skeleton />;
   };
 
   const ShowProducts = () => {
@@ -88,12 +90,15 @@ const Products = () => {
                   />
                   <div className='card-body'>
                     <h5 className='card-title mb-0'>
-                      {product.title.substring(0, 12)}
+                      {product.title.substring(0, 50)}
                     </h5>
                     <p className='card-text lead fw-bold'>${product.price}</p>
-                    <a href='#' className='btn btn-outline-dark'>
+                    <NavLink
+                      to={`products/${product.id}`}
+                      className='btn btn-outline-dark'
+                    >
                       Buy
-                    </a>
+                    </NavLink>
                   </div>
                 </div>
               </div>

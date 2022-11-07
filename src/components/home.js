@@ -1,21 +1,12 @@
 import React from 'react';
+import Slider from './imageSlider';
+import Products from './products';
 
 function Home() {
   return (
     <>
-      <div className='homeParrent'>
-        <div className='homeLeftSide'>
-          <ul className='productList'>
-            <h3>Products</h3>
-            <li>All products</li>
-            <li> jewelery</li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-        <div className='homeSliderSide'></div>
-        <div className='homeRightSide'></div>
-      </div>
+      <Slider />
+      <Products />
     </>
   );
 }
