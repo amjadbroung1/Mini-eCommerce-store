@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import Skeleton from 'react-loading-skeleton';
 const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState([]);
@@ -34,7 +33,7 @@ const Products = () => {
   };
 
   const Loading = () => {
-    return <Skeleton />;
+    return <h1>Loading...</h1>;
   };
 
   const ShowProducts = () => {
